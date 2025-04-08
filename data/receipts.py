@@ -1,4 +1,5 @@
 from dataclasses import dataclass
+import uuid
 
 @dataclass
 class Item:
@@ -12,4 +13,6 @@ class Receipt:
     purchaseDate: str
     total: str
     items: list[Item]
-    id:int
+    id:uuid
+
+list_of_receipts = []

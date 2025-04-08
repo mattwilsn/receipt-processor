@@ -1,4 +1,4 @@
-from data.receipts import Receipt
+from data.receipts import Receipt, list_of_receipts
 import uuid
 
 class receipts_process_controller:
@@ -10,11 +10,22 @@ class receipts_process_controller:
         """
         Process a single receipt and return id. of the new receipt
         """
-        card1 = Receipt(
+        receipt = Receipt(
             receipt.get("retailer"), 
             receipt.get("purchaseDate"), 
             receipt.get("total"), 
             receipt.get("items"),
            id
             )
+        list_of_receipts.append(receipt)
         return id
+    
+    def get_points(id):
+
+        """
+        Get points for a single receipt
+        """
+        for receipt in list_of_receipts:
+            if str(receipt.id) == id:
+                return str(receipt.id)
+        pass
