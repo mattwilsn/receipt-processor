@@ -19,8 +19,11 @@ def get_points(id):
         return { "error": "No id provided" }, 400    
     
     points = receipts_process_controller.get_points(id)
+    
+    if not points:
+        return { "error": "No points found" }, 404
 
-    return {"points": points}, 200
+    return points, 200
 
 if __name__ == "__main__":
     app.run(debug=False,host='0.0.0.0',port=5000,threaded=False)

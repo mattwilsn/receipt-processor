@@ -13,6 +13,5 @@ class Receipt:
     purchaseDate: str
     total: str
     items: list[Item]
-    id:uuid
 
-list_of_receipts = []
+list_of_receipts = {}
