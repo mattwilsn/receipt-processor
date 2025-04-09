@@ -24,8 +24,10 @@ class receipts_process_controller:
         receipt = Receipt(
             receipt.get("retailer"), 
             receipt.get("purchaseDate"), 
-            receipt.get("total"), 
-            receipt.get("items")
+            receipt.get("items"),
+            float(receipt.get("total")),
+            receipt.get("purchaseTime")
+
         )
         
         list_of_receipts[id]= receipt
@@ -45,6 +47,6 @@ class receipts_process_controller:
             # receipt_data_class = list_of_receipts[id]
             # receipt_dict = dataclasses.asdict(receipt_data_class)
             # receipt_json = json.dumps(receipt_dict)
-            return total
+            return {"points": total}
         return None
 

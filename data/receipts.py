@@ -4,14 +4,15 @@ import uuid
 @dataclass
 class Item:
     shortDescription: str
-    price: str
+    price: float
 
 
 @dataclass
 class Receipt:
     retailer: str
     purchaseDate: str
-    total: str
     items: list[Item]
+    total: float
+    purchaseTime: str
 
 list_of_receipts = {}
