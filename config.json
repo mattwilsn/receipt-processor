@@ -1,21 +1,23 @@
 {
     "points": {
-        "isAlphanumericInRetailerName":1,
-        "isRoundTotal":50,
+        "alphanumericPoints":1,
+        "isRoundTotalPoints":50,
         "isMultipleOf25Total":{
             "points": 25,
             "multipuleOf": 0.25
         },
         "isItemLengthEven":{
             "points": 5,
-            "length": 2
+            "divisibleBy": 2
         },
         "isTrimmedLengthDecMul":{
             "multipuleOf": 3,
             "factor": 2
         },
-        "llmGreaterThen":{},
-        "isOddDay":6,
+        "isOddDay":{
+            "points": 6,
+            "divisibleBy": 2
+        },
         "isBetweenTimes":{
             "points": 10,
             "startTime": 14,
