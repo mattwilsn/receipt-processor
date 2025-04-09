@@ -7,7 +7,7 @@ import json
 
 class BaseHandler(ABC):
     def __init__(self):
-        with open('/app/config.json') as config_file:
+        with open('../config.json') as config_file:
          self.config = json.loads(config_file.read())["points"]
 
     @abstractmethod
