@@ -9,8 +9,8 @@ class BaseHandler(ABC):
 class isAlphanumericInRetailerName(BaseHandler):
     def handelr(self, data):
         # Assuming data is a string
-        if isinstance(data, str):
-            return len([c for c in data if c.isalnum()])
+        if isinstance(data.retailer, str):
+            return len([c for c in data.retailer if c.isalnum()])
         return 0
 
 # 50 points if the total is a round dollar amount with no cents.
@@ -74,14 +74,14 @@ class isBetween2and4(BaseHandler):
 class PointsCalculator:
     def __init__(self):
         self.handlers = [
-            isAlphanumericInRetailerName(),
-            isAroundDollarAmount(),
-            isMultipleOf25(),
-            isMmultiple(),
-            isTrimmedLengthDecMul(),
-            llmGreaterThen(),
-            isOddDay(),
-            isBetween2and4()
+            isAlphanumericInRetailerName()
+            # isAroundDollarAmount(),
+            # isMultipleOf25(),
+            # isMmultiple(),
+            # isTrimmedLengthDecMul(),
+            # llmGreaterThen(),
+            # isOddDay(),
+            # isBetween2and4()
         ]
     
     def calculate_points(self, data):

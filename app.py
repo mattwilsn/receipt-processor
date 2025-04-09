@@ -9,7 +9,7 @@ def receipts_process():
     if not data:
         return { "error": "No data provided" }, 400    
     id = receipts_process_controller.process_receipt(data)
-
+    
     return {"id": id}, 200
 
 
@@ -20,10 +20,10 @@ def get_points(id):
     
     points = receipts_process_controller.get_points(id)
     
-    if not points:
-        return { "error": "No points found" }, 404
+    if points is None:
+        return { "error": "Id not found" }, 404
 
-    return points, 200
+    return { "total points": points }, 200
 
 if __name__ == "__main__":
     app.run(debug=False,host='0.0.0.0',port=5000,threaded=False)
