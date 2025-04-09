@@ -42,6 +42,8 @@ class TestAPI(unittest.TestCase):
         response = self.app.post('/receipts/process', json=recipt)
         data = response.get_json()
         self.assertIn("id", data, f"Key 'id' should be in the dictionary")
+       
+        #save the id 
         TestAPI.id = data["id"]
 
 
@@ -49,7 +51,9 @@ class TestAPI(unittest.TestCase):
     def test_get_points(self):
         self.assertEqual('Hello, world!', 'Hello, world!')
         response = self.app.get('/receipts/'+str(TestAPI.id)+'/points')
-        self.assertEqual(response.status_code, 201)
+        data = response.get_json()
+        self.assertEqual(response.status_code, 200)
+        self.assertEqual(data["points"], 109)
 
 if __name__ == '__main__':
     unittest.main()

@@ -23,7 +23,7 @@ def get_points(id):
     if "error" in results:
         return { "error": results["error"]}, 404
 
-    return { "total points": results }, 200
+    return results, 200
 
 if __name__ == "__main__":
     app.run(debug=False,host='0.0.0.0',port=5000,threaded=False)
