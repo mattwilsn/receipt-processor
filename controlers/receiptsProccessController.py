@@ -5,21 +5,12 @@ import json
 import dataclasses
 
 
-class receipts_process_controller:
-   
-    def get_receipts():
-        """
-        Get all receipts
-         """
-        return list_of_receipt
-
-    def __init__(self):
-        pass
+class ReceiptsProcessPontroller:
 
     def process_receipt(receipt):
         id =  str(uuid.uuid4())
         """
-        Process a single receipt and return id. of the new receipt
+        Store a single receipt and return id. of the new receipt
         """
         receipt = Receipt(
             receipt.get("retailer"), 
@@ -27,26 +18,22 @@ class receipts_process_controller:
             receipt.get("items"),
             float(receipt.get("total")),
             receipt.get("purchaseTime")
-
         )
         
         list_of_receipts[id]= receipt
-
-        return list_of_receipts
+        
+        return id
   
     
     def get_points(id):
-    
-
         """
         Get points for a single receipt
         """
         if id in list_of_receipts:
             pc = PointsCalculator()
             total = pc.calculate_points(list_of_receipts[id])
-            # receipt_data_class = list_of_receipts[id]
-            # receipt_dict = dataclasses.asdict(receipt_data_class)
-            # receipt_json = json.dumps(receipt_dict)
             return {"points": total}
+        else:
+            return {"error": "Receipt not found"}
         return None
 
