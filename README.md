@@ -19,9 +19,11 @@ This was built with the following
 ## Available endpoints
 
 **/receipts/process**  
+
  `{"id":"6aa32256-7d61-4164-944d-3f6810db815e"}` |
 
 **/receipts/{ID}/points**
+
 `{"points":28}` |
 
 ### curl examples
