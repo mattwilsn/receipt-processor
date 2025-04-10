@@ -8,12 +8,15 @@ This was built with the following
 ## How to run w/ docker
 
 `docker build -t receipt-processor .`
+
 `docker run -p 5000:5000 receipt-processor`
 
 ## How to run e2e tests
 
 `pip install -r requirements.txt`
+
 `cd tests`
+
 `python -m unittest e2e.py`
 
 ## Available endpoints
