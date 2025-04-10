@@ -34,6 +34,6 @@ class ReceiptsProcessPontroller:
             total = pc.calculate_points(list_of_receipts[id])
             return {"points": total}
         else:
-            return {"error": "Receipt not found"}
+            return {"error": "NotFound"}
         return None
 
