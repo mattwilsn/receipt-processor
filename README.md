@@ -1,5 +1,5 @@
 # receipt-processor
-
+FETCH, PYTHON, TAKE HOME 
 This was built with the following
 
 `Docker version 20.10.8, build 3967b7d`
